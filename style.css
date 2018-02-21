@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 30%;
+    border-right: 1px solid #121d27;
+    background: #000911;
+    display: flex;
+}
+
+.content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coins {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.coin {
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #121d27;
+    cursor: pointer;
+}
+
+.coin img {
+    width: 35px;
+    height: 35px;
+    margin: 0px 20px 0 25px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+#coin-price {
+    font-size: 35px;
+}

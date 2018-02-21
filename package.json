@@ -1,0 +1,15 @@
+{
+  "name": "crypto-tick",
+  "version": "1.0.0",
+  "description": "Shows your crypto currency price.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikola Chetelyazov",
+  "license": "ISC",
+  "devDependencies": {
+    "electron" : "1.6.11"
+  }
+}

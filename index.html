@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Crypto Tick</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+    <div id="container">
+        <div class="sidebar">
+            <ul class="coins">
+                <li id="bitcoin" class="coin"><img src="images/bitcoin.png" alt="Bitcoin (BTC)"/>Bitcoin (BTC)</li>
+                <li id="etherium" class="coin"><img src="images/eth.png" alt="Etherium (ETH)"/>Etherium (ETH)</li>
+                <li id="litecoin" class="coin"><img src="images/litecoin.png" alt="Litecoin (LTC)"/>Litecoin (LTC)</li>
+                <li id="ripple" class="coin"><img src="images/ripple.png" alt="Ripple (XRP)"/>Ripple (XRP)</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1 id="coin-name"></h1>
+            <h2 id="coin-price">Please select a coin...</h2>
+        </div>
+
+    </div>
+    <script>
+        require('./renderer');
+    </script>
+    </body>
+</html>
