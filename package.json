@@ -2,14 +2,17 @@
   "name": "crypto-tick",
   "version": "1.0.0",
   "description": "Shows your crypto currency price.",
-  "main": "main.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "tsc && electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nikola Chetelyazov",
   "license": "ISC",
   "devDependencies": {
     "electron": "^17.0.1"
+  },
+  "dependencies": {
+    "typescript": "^4.5.5"
   }
 }
