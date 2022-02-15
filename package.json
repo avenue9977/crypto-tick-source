@@ -2,7 +2,7 @@
   "name": "crypto-tick",
   "version": "1.0.0",
   "description": "Shows your crypto currency price.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"

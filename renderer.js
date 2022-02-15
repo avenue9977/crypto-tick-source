@@ -1,69 +1,45 @@
-const $ = require("jquery"),
-			purl = "https://poloniex.com/public?command=returnTicker";
+const url = "https://poloniex.com/public?command=returnTicker"
+const currencies = [
+    {
+        id: 'btc',
+        name: 'USDT_BTC'
+    },
+    {
+        id: 'eth',
+        name: 'USDT_ETH'
+    },
+    {
+        id: 'ltc',
+        name: 'USDT_LTC'
+    },
+    {
+        id: 'xrp',
+        name: 'USDT_XRP'
+    }
+]
 
-
-let getBTC = () => {
-	$.ajax({
-			url: purl,
-			success: (data) => {
-				let price = parseFloat(data.USDT_BTC.last);
-				$("#coin-price").text(price.toFixed(2) + " $")
-			}
-		})
+const getCurrencyPrice = async (name) => {
+    const response = await fetch(url)
+    const data = await response.json()
+    return parseFloat(data[name].last).toFixed(2)
 }
 
-let getETH = () => {
-	$.ajax({
-			url: purl,
-			success: (data) => {
-				let price = parseFloat(data.USDT_ETH.last)
-				$("#coin-price").text(price.toFixed(2) + " $")
-			}
-		})
+const addClickListener = (currency) => {
+    const coinNameElement = document.getElementById('coin-name')
+    const button = document.getElementById(currency.id)
+
+    button.addEventListener('click', () => {
+        // TODO Add loader
+        getCurrencyPrice(currency.name).then(price => {
+            coinNameElement.textContent = button.textContent
+            const priceElement = document.getElementById('coin-price')
+            priceElement.textContent = `${price} USDT`
+        })
+    })
 }
 
-let getLTC = () => {
-	$.ajax({
-			url: purl,
-			success: (data) => {
-				let price = parseFloat(data.USDT_LTC.last);
-				$("#coin-price").text(price.toFixed(2) + " $")
-			}
-		})
-}
-
-let getXRP = () => {
-	$.ajax({
-			url: purl,
-			success: (data) => {
-				let price = parseFloat(data.USDT_XRP.last);
-				$("#coin-price").text(price.toFixed(2) + " $")
-			}
-		})
-}
-
-$("#bitcoin").click(function(){
-    let a = $(this).text();
-    $("#coin-name").text(a);
-		getBTC();
-})
-
-$("#etherium").click(function(){
-    let a = $(this).text();
-    $("#coin-name").text(a);
-		getETH();
-})
-
-$("#litecoin").click(function(){
-    let a = $(this).text();
-    $("#coin-name").text(a);
-		getLTC();
-})
-
-$("#ripple").click(function(){
-    let a = $(this).text();
-    $("#coin-name").text(a);
-		getXRP();
+currencies.forEach(currency => {
+    addClickListener(currency)
 })
 
 
