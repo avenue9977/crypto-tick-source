@@ -10,6 +10,6 @@
   "author": "Nikola Chetelyazov",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^1.8.2"
+    "electron": "^17.0.1"
   }
 }
