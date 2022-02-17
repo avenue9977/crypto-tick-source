@@ -5,11 +5,11 @@
   "main": "dist/main.js",
   "scripts": {
     "start": "npm run build && electron-forge start",
-    "build": "tsc && npx tailwindcss -i ./src/style.css -o ./dist/style.css",
-    "watch-css": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "build": "tsc && tailwindcss -i ./src/style.css -o ./dist/style.css",
+    "watch-css": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "package": "npm run build && electron-forge package",
+    "make": "npm run build && electron-forge make"
   },
   "author": "Nikola Chetelyazov",
   "license": "ISC",
