@@ -47,12 +47,8 @@ const togglePricing = (visible: boolean) => {
 
 const getCurrencyPrice = async (identifier: string): Promise<string> => {
   const response = await fetch(url + identifier, {
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'no-cors',
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    cache: 'no-cache'
   })
   const data = await response.json()
 
