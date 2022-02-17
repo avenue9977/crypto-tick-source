@@ -4,27 +4,27 @@ interface Currency {
   identifier: string
 }
 
-const url = "https://poloniex.com/public?command=returnTicker"
+const url = "https://api.binance.com/api/v3/ticker/price?symbol="
 const currencies: Currency[] = [
   {
     id: 'btc',
     name: 'BTC',
-    identifier: 'USDT_BTC'
+    identifier: 'BTCUSDT'
   },
   {
     id: 'eth',
     name: 'ETH',
-    identifier: 'USDT_ETH'
+    identifier: 'ETHUSDT'
   },
   {
     id: 'ada',
     name: 'ADA',
-    identifier: 'USDT_ADA'
+    identifier: 'ADAUSDT'
   },
   {
     id: 'xrp',
     name: 'XRP',
-    identifier: 'USDT_XRP'
+    identifier: 'XRPUSDT'
   }
 ]
 
@@ -45,13 +45,21 @@ const togglePricing = (visible: boolean) => {
   visible ? classes.remove(hiddenClass) : classes.add(hiddenClass)
 }
 
-const getCurrencyPrice = async (name: string) => {
-  const response = await fetch(url)
+const getCurrencyPrice = async (identifier: string): Promise<string> => {
+  const response = await fetch(url + identifier, {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'no-cors',
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
   const data = await response.json()
-  return parseFloat(data[name].last).toFixed(2)
+
+  return parseFloat(data.price).toFixed(2)
 }
 
-const beforePairselect = () => {
+const beforePairSelect = () => {
   hideInitialState()
   togglePricing(false)
   toggleLoader(true)
@@ -62,7 +70,7 @@ const addClickListener = (currency: Currency) => {
   const button = document.getElementById(currency.id) as HTMLButtonElement
 
   button.addEventListener('click', () => {
-    beforePairselect()
+    beforePairSelect()
 
     getCurrencyPrice(currency.identifier)
       .then(price => {
