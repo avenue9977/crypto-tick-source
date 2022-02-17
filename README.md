@@ -1,4 +1,4 @@
-#Crypto Tick App
+# Crypto Tick App
 
 Simple crypto pricing desktop application made with Electron, Typescript and Tailwind.
 
