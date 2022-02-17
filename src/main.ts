@@ -8,7 +8,8 @@ function createWindow () {
         width: 1000,
         height: 800,
         minWidth: 700,
-        minHeight: 345,
+        minHeight: 650,
+        resizable: false,
         darkTheme: true,
         icon: '/images/crypto.png',
         webPreferences: {

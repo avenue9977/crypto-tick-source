@@ -4,7 +4,9 @@
   "description": "Shows your crypto currency price.",
   "main": "dist/main.js",
   "scripts": {
-    "start": "tsc && electron .",
+    "start": "npm run build && electron .",
+    "build": "npx tailwindcss -i ./src/style.css -o ./dist/style.css && tsc",
+    "watch-css": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nikola Chetelyazov",
@@ -13,6 +15,7 @@
     "electron": "^17.0.1"
   },
   "dependencies": {
+    "tailwindcss": "^3.0.22",
     "typescript": "^4.5.5"
   }
 }
