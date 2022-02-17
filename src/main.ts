@@ -11,7 +11,7 @@ function createWindow () {
         minHeight: 650,
         resizable: false,
         darkTheme: true,
-        icon: '/images/crypto.png',
+        icon: '../assets/app-icon.png',
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }
