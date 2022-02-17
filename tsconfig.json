@@ -1,20 +1,16 @@
 {
     "compilerOptions": {
-        "rootDir": "src",
-        "outDir": "dist",
-        "target": "es5",
-        "lib": ["es6", "dom"],
-        "sourceMap": true,
         "allowJs": true,
-        "moduleResolution": "node",
-        "forceConsistentCasingInFileNames": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
+        "module": "commonjs",
         "noImplicitAny": true,
-        "strictNullChecks": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "noUnusedLocals": true
+        "sourceMap": true,
+        "baseUrl": ".",
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "paths": {
+            "*": ["node_modules/*"]
+        }
     },
-    "exclude": ["*/*.test.ts"],
     "include": ["src/**/*"]
 }

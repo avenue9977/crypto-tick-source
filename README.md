@@ -1,8 +1,22 @@
-# crypto-tick
-App made with Electron that shows crypto currency prices.
+#Crypto Tick App
 
-The app can work on Windows and Mac. It just has to be bootstaped and build. You can find the how to build it here:
+Simple crypto pricing desktop application made with Electron, Typescript and Tailwind.
 
-For Mac - https://electronjs.org/docs/development/build-instructions-osx
+## Available Scripts
 
-For Windows - https://electronjs.org/docs/development/build-instructions-windows
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode. If you need the development tools enabled you can uncomment row 24 in `src/main.ts`
+
+The app will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm run watch-css`
+
+Run the Tailwind CLI tool to scan your template files for classes and build your CSS.
+
+### `npm run make`
+
+Builds the application for shipment to the `out` folder. You can install the app from there.
